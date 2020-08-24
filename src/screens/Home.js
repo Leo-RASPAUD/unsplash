@@ -88,14 +88,9 @@ const Home = () => {
           defaultValue={userToSearch}
         />
       </View>
-      {errors.user && <Text style={styles.text}>This is required.</Text>}
+      {errors.user && <Text style={styles.error}>This is required.</Text>}
       <View style={styles.search}>
-        <Button
-          title="Search"
-          color="#081229"
-          onPress={handleSubmit(onSubmit)}
-          disabled={Object.keys(errors).length > 0}
-        />
+        <Button title="Search" color="#081229" onPress={handleSubmit(onSubmit)} />
       </View>
       {searchUserResults.length > 0 && (
         <FlatGrid
@@ -129,6 +124,7 @@ export default Home;
 
 const styles = StyleSheet.create({
   text: { color: 'white', fontSize: 24 },
+  error: { color: 'red', fontSize: 16, paddingBottom: 10 },
   title: {
     color: '#ec5990',
     fontSize: 36,
