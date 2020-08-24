@@ -11,6 +11,7 @@ const UserTile = (user) => {
 
   const onPress = () => {
     dispatch({ type: userReducerTypes.SET_CURRENT_USER, payload: user });
+    dispatch({ type: userReducerTypes.SET_CURRENT_USER_PHOTOS, payload: [] });
     navigation.navigate('Details');
   };
 

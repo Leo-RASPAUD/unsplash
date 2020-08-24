@@ -87,23 +87,25 @@ const Home = () => {
           rules={{ required: true }}
           defaultValue={userToSearch}
         />
-        {errors.user && <Text>This is required.</Text>}
-        <View style={styles.search}>
-          <Button
-            title="Search"
-            color="#081229"
-            onPress={handleSubmit(onSubmit)}
-            disabled={Object.keys(errors).length > 0}
-          />
-        </View>
-        {searchUserResults.length > 0 && (
-          <FlatGrid
-            itemDimension={130}
-            data={searchUserResults}
-            renderItem={({ item }) => <UserTile {...item} />}
-            keyExtractor={({ id }) => id}
-          />
-        )}
+      </View>
+      {errors.user && <Text style={styles.text}>This is required.</Text>}
+      <View style={styles.search}>
+        <Button
+          title="Search"
+          color="#081229"
+          onPress={handleSubmit(onSubmit)}
+          disabled={Object.keys(errors).length > 0}
+        />
+      </View>
+      {searchUserResults.length > 0 && (
+        <FlatGrid
+          itemDimension={130}
+          data={searchUserResults}
+          renderItem={({ item }) => <UserTile {...item} />}
+          keyExtractor={({ id }) => id}
+        />
+      )}
+      <View>
         {loading && <ActivityIndicator />}
         {searchUserResults.length > 0 && !noMoreData && (
           <View style={styles.search}>
@@ -116,8 +118,8 @@ const Home = () => {
             />
           </View>
         )}
-        {notFound && <Text>Oops! Could not find any users.</Text>}
-        {error && <Text>Error while loading the data, please try again</Text>}
+        {notFound && <Text style={styles.text}>Oops! Could not find any users.</Text>}
+        {error && <Text style={styles.text}>Error while loading the data, please try again</Text>}
       </View>
     </View>
   );
@@ -126,6 +128,7 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
+  text: { color: 'white', fontSize: 24 },
   title: {
     color: '#ec5990',
     fontSize: 36,
