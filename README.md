@@ -26,3 +26,9 @@ This has been done for an interview, the goal was to build an app in 4h to query
 - Add carousel when clicking an image
 - Improve styles
 - Cleanup code
+
+### Screenshots
+
+<img src="https://unsplashreadme.s3-ap-southeast-2.amazonaws.com/Screenshot_20200824-151526_Expo.jpg" width="200">
+<img src="https://unsplashreadme.s3-ap-southeast-2.amazonaws.com/Screenshot_20200824-151533_Expo.jpg" width="200">
+<img src="https://unsplashreadme.s3-ap-southeast-2.amazonaws.com/Screenshot_20200824-151537_Expo.jpg" width="200">
